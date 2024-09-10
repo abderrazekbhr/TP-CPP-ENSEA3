@@ -1,0 +1,11 @@
+# Ignore all object files
+*.o
+
+
+
+# Ignore Visual Studio Code settings folder
+.vscode/
+
+
+# Ignore all files in the build/ directory
+build/
