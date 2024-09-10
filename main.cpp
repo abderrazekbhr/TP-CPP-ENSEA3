@@ -31,8 +31,8 @@ int main(){
     std::string name="Volcanion";
     int id=1;
     Pokedex *p=Pokedex::getPokdexInstance();
-    Pokemone *searcbByName= p->getPokemoneByName(name);
-    Pokemone *searcbByID=p->getPokemoneById(id);
+    Pokemone *searcbByName= p->getPokemoneByNameNewV(name);
+    Pokemone *searcbByID=p->getPokemoneByIdNewV(id);
     if(searcbByName!=nullptr){
         std::cout<<"Search by name= "<<name<<":" <<std::endl;
         searcbByName->displayInfo();

@@ -130,7 +130,7 @@ void Pokemone::setGeneration(const int generation)
 
 // display all params
 const void Pokemone::displayInfo(){
-    std::cout<<"id:"<<this->id<<", game:"<<this->game<<", hitPoint:"<<this->hitPoint<<", attack:"<<this->attack<<", defence:"<<this->defence<<", generation:" <<this->generation<<std::endl;
+    std::cout<<"id:"<<this->id<<", name:"<<this->name<<", game:"<<this->game<<", hitPoint:"<<this->hitPoint<<", attack:"<<this->attack<<", defence:"<<this->defence<<", generation:" <<this->generation<<std::endl;
 }
 
 // attack pokemone
