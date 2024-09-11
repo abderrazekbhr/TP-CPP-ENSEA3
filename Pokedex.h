@@ -1,4 +1,5 @@
 #include"SetOfPokemon.h"
+#pragma once
 class Pokedex:public SetOfPokemon{
 private:
     static Pokedex* pokedexInstance; 

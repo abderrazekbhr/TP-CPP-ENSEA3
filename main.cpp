@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Pokedex.h"
+#include "Pokeball.h"
+#include "SetOfPokemon.h"
 void firstMain()
 {
     Pokemone p;
@@ -47,6 +49,10 @@ int main(){
     else{
         std::cout<<"Pokemone with id "<<id <<" found"<<std::endl;
     }
-    // p->affiche();
+    Pokeball *pokeball=new Pokeball();
+    pokeball->addNewPokemone(searcbByName);
+    pokeball->addNewPokemone(searcbByID);
+    pokeball->affiche();
     return 0;   
+     
 }
