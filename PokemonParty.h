@@ -1,9 +1,17 @@
-#include "SetOfPokemon.h"
 #pragma once
-class PokemonParty: public SetOfPokemon {
-    PokemonParty(int p1, int p2, int p3, int p4, int p5, int p6);
-    PokemonParty(std::string nameP1, std::string nameP2, std::string nameP3, std::string nameP4, std::string nameP5, std::string nameP6);
-    ~PokemonParty();
+#include "SetOfPokemon.h"
+#include "Pokeball.h"
+#include "Player.h"
+class PokemonParty {
+    private:
+        Player *player1;
+        Player *player2;
+    public:
+        PokemonParty(int indexP1,int indexP2,std::vector<int> pokemonesP1,std::vector<int> pokemonesP2);
+        PokemonParty(int indexP1,int indexP2,std::vector<std::string> pokemonesP1, std::vector<std::string> pokemonesP2);
+        void fullbattle();
+        void afterCombat(std::vector<Pokemone *>pokemonesAfterPartyP1,std::vector<Pokemone *>pokemonesAfterPartyP2);
+        ~PokemonParty();
     
 
 };

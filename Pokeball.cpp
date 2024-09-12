@@ -22,3 +22,13 @@ Pokemone* Pokeball::getPokemoneById(int id){
     return nullptr;
     
 }
+
+Pokemone* Pokeball::getPokemoneByIndex(int id){
+
+    if(id>=0 && id<getPokemones().size()){
+        Pokemone *p= getPokemones()[id];
+        removePokemone(id);
+        return p;      
+    }
+    return nullptr;
+}

@@ -159,6 +159,6 @@ void Pokemone::setName(std::string newName){
 // destructor 
 Pokemone::~Pokemone(){
     Pokemone::instance --;
-    std::cout<<"end Pokemone id:"<<this->getId()<<"| and nb_instance:"<<Pokemone::getNbInstance()<<std::endl;
+    // std::cout<<"end Pokemone id:"<<this->getId()<<"| and nb_instance:"<<Pokemone::getNbInstance()<<std::endl;
 
 }

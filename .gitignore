@@ -1,6 +1,6 @@
 # Ignore all object files
 *.o
-
+*/*.gch
 
 
 # Ignore Visual Studio Code settings folder
