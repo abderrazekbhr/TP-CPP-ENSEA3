@@ -1,4 +1,3 @@
-#pragma once 
 #include "../h_files/Combat.h"
 
 Combat::Combat(PokemonParty *party)

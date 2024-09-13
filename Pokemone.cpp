@@ -134,11 +134,11 @@ const void Pokemone::displayInfo(){
 }
 
 // attack pokemone
-void Pokemone::attackEn(Pokemone p){
-    double diff= this->getAttack()-p.getDefence();
+void Pokemone::attackEnemy(Pokemone* p){
+    double diff= this->getAttack()-p->getDefence();
     // std::cout<<"--------------"<<diff<<"--------------"<<std::endl;
     if(diff>0){
-        p.setHitPoint(p.getHitPoint()-diff);
+        p->setHitPoint(p->getHitPoint()-diff);
     }
     
 }

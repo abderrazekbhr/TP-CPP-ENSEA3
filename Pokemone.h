@@ -30,7 +30,7 @@ public:
     void setGeneration(const int generation);
     std::string getName();
     void setName(const std::string newName);
-    void attackEn(const Pokemone p);
+    void attackEnemy(Pokemone* p);
     static int getNbInstance();
     ~Pokemone();
 };

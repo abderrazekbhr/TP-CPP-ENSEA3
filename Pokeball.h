@@ -6,5 +6,4 @@ class Pokeball : public SetOfPokemon {
         Pokemone* getPokemoneByName(std::string name);
         Pokemone* getPokemoneById(int id);
         Pokemone* getPokemoneByIndex(int id);
-               
 };

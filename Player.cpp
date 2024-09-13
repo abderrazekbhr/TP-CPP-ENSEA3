@@ -1,5 +1,4 @@
 #include "Player.h"
-#include "Pokeball.h"
 #include <iostream>
 #include <string>
 

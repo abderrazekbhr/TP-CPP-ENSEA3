@@ -55,7 +55,6 @@ void SetOfPokemon::addNewPokemone(Pokemone *p)
 
 
 // removePokemone method to remove a pokemone from the vector
-void SetOfPokemon::removePokemone(int index)
-{
-    pokemones.erase(pokemones.begin() + index,pokemones.end());
+void SetOfPokemon::removePokemone(int index){
+    pokemones.erase(pokemones.begin() + index);
 }

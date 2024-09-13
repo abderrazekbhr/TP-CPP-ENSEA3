@@ -24,9 +24,9 @@ Pokemone* Pokeball::getPokemoneById(int id){
 }
 
 Pokemone* Pokeball::getPokemoneByIndex(int id){
-
     if(id>=0 && id<getPokemones().size()){
         Pokemone *p= getPokemones()[id];
+        p->displayInfo();
         removePokemone(id);
         return p;      
     }
