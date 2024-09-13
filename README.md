@@ -26,7 +26,7 @@ Lorsque deux Pokémon s'affrontent et que chacun d'eux a des points d'attaque in
 
 Voici un diagramme représentant le déroulement du jeu :
 
-![Diagramme de Déroulement du Jeu](path/to/game_flow_diagram.png)
+![Diagramme de Déroulement du Jeu]([path/to/game_flow_diagram.png](https://github.com/abderrazekbhr/TP-CPP-ENSEA3/blob/main/documentation/flowChart.png))
 
 Ce diagramme montre les différentes étapes de l'exploration, de la sélection des Pokémon, du lancement des combats et de l'affichage des résultats.
 
