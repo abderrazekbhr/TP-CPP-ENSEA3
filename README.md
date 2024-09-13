@@ -20,13 +20,13 @@ Après la fin des 3 combats, les résultats sont affichés avec le nombre de poi
 
 ## Note Importante
 
-Lorsque deux Pokémon s'affrontent et que chacun d'eux a des points d'attaque inférieurs aux points de défense de son adversaire, le combat est ignoré (skip).
+Lorsque deux Pokémon s'affrontent et que chacun d'eux a des points d'attaque inférieurs aux points de défense de son adversaire, le combat entre les deux pokemone sera ingoré et on passe au pokemone suivant.
 
 ## Déroulement du Jeu
 
 Voici un diagramme représentant le déroulement du jeu :
 
-![Diagramme de Déroulement du Jeu]([https://github.com/abderrazekbhr/TP-CPP-ENSEA3/blob/main/documentation/flowChart.png])
+![Diagramme de Déroulement du Jeu](https://github.com/abderrazekbhr/TP-CPP-ENSEA3/blob/main/documentation/flowChart.png)
 
 Ce diagramme montre les différentes étapes de l'exploration, de la sélection des Pokémon, du lancement des combats et de l'affichage des résultats.
 
