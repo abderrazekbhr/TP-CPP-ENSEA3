@@ -20,14 +20,15 @@ Après la fin des 3 combats, les résultats sont affichés avec le nombre de poi
 
 ## Note Importante
 
-Lorsque deux Pokémon s'affrontent et que chacun d'eux a des points d'attaque inférieurs aux points de défense de son adversaire, le combat est ignoré (skip).
+Lorsque deux Pokémon s'affrontent et que chacun d'eux a des points d'attaque inférieurs aux points de défense de son adversaire, le combat entre les deux pokemone sera ingoré et on passe au pokemone suivant.
 
 ## Déroulement du Jeu
 
 Voici un diagramme représentant le déroulement du jeu :
 
-![Diagramme de Déroulement du Jeu](path/to/game_flow_diagram.png)
-
+<p align="center">
+  <img src="https://github.com/abderrazekbhr/TP-CPP-ENSEA3/blob/main/documentation/flowChart.png" alt="Diagramme de Déroulement du Jeu" />
+</p>
 Ce diagramme montre les différentes étapes de l'exploration, de la sélection des Pokémon, du lancement des combats et de l'affichage des résultats.
 
 ## Architecture du Projet
@@ -46,13 +47,13 @@ Pour exécuter le projet, suivez ces étapes :
    - Assurez-vous d'avoir un compilateur C++ installé (comme `g++`).
    - Utilisez la commande suivante pour compiler le projet :
      ```bash
-     g++ -o pokemon_game main.cpp other_files.cpp
+     g++ ./main.cpp ./Pokedex.cpp ./Pokeball.cpp ./SetOfPokemon.cpp ./Pokemone.cpp ./Game.cpp ./Player.cpp ./PokemonParty.cpp ./state_pattern/cpp_files/Attente.cpp ./state_pattern/cpp_files/Init.cpp ./state_pattern/cpp_files/SafeExploration.cpp ./state_pattern/cpp_files/Exploration.cpp ./state_pattern/cpp_files/Combat.cpp  -o pokeGame
      ```
 
 2. **Exécuter le projet** :
    - Après la compilation, exécutez le jeu avec la commande suivante :
      ```bash
-     ./pokemon_game
+     ./pokeGame
      ```
 
 ## Épreuve de l'Exécution
