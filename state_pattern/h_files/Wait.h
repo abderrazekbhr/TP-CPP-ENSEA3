@@ -1,7 +1,7 @@
 #include "./State.h"
 
-class Attente:public State{
+class Wait:public State{
     public :
         void handle();
-        ~Attente();
+        ~Wait();
 };

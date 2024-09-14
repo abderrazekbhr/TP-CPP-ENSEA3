@@ -3,7 +3,7 @@
 #pragma once
 class Pokeball : public SetOfPokemon {
     public:
-        Pokemone* getPokemoneByName(std::string name);
-        Pokemone* getPokemoneById(int id);
-        Pokemone* getPokemoneByIndex(int id);
+        Pokemon* getPokemonByName(std::string name);
+        Pokemon* getPokemonById(int id);
+        Pokemon* getPokemonByIndex(int id);
 };

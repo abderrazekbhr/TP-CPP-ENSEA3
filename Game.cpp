@@ -1,10 +1,10 @@
 #include "Game.h"
-#include "state_pattern/h_files/Attente.h"
+#include "state_pattern/h_files/Wait.h"
 
 std::vector<Player*> Game::players;
 Game::Game()
 {
-    setState(new Attente());
+    setState(new Wait());
 }
 
 std::vector<Player *> Game::getPlayers()

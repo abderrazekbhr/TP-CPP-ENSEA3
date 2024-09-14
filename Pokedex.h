@@ -6,10 +6,10 @@ private:
     Pokedex(std::string fileName);
 public :
     static Pokedex* getPokdexInstance();
-    Pokemone* getPokemoneById(int id);
-    Pokemone* getPokemoneByName(std::string name);
-    Pokemone* getPokemoneByIdNewV(int id);
-    Pokemone* getPokemoneByNameNewV(std::string name);
-    std::vector<Pokemone *> getPokemoneByIdNewVAllInstance(int id);
-    std::vector<Pokemone *> getPokemoneByNameNewVAllInstance(std::string name);
+    Pokemon* getPokemonById(int id);
+    Pokemon* getPokemonByName(std::string name);
+    Pokemon* getPokemonByIdNewV(int id);
+    Pokemon* getPokemonByNameNewV(std::string name);
+    std::vector<Pokemon *> getPokemonByIdNewVAllInstance(int id);
+    std::vector<Pokemon *> getPokemonByNameNewVAllInstance(std::string name);
 };

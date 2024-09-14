@@ -4,7 +4,7 @@
 
 Player::Player(std::string name)
 {
-    
+    points = 0;
     this->name = name;
     myballs = new Pokeball();
 }
@@ -17,14 +17,23 @@ Pokeball *Player::getPokeball()
     return myballs;
 }
 
-void Player::addPokemon(Pokemone *pokemone)
+void Player::addPokemon(Pokemon *pokemon)
 {
-    myPokemonsForBattle.push_back(pokemone);
+    myPokemonsForBattle.push_back(pokemon);
 }
 
-std::vector<Pokemone*> Player::getMyPokemonsForBattle()
+std::vector<Pokemon *> Player::getMyPokemonsForBattle()
 {
     return myPokemonsForBattle;
+}
+int Player::getPoints()
+{
+    return points;
+}
+
+void Player::addPoint()
+{
+    this->points += 1;
 }
 
 Player::~Player()

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Pokemone.h"
+#include "Pokemon.h"
 
 int Pokemone::instance=0;
 //default constructor

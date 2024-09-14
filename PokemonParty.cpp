@@ -10,9 +10,9 @@ PokemonParty::PokemonParty(int indexP1, int indexP2, std::vector<int> pokemonesP
     player1 = Game::getPlayers()[indexP1];
     player2 = Game::getPlayers()[indexP2];
     // Game::getPlayers()[indexP1]->getPokeball()->affiche();
-    std::cout << "start of PokemonParty constructor" << std::endl;
-    std::cout << "P1.size()=" << player1->getPokeball()->getPokemones().size() << std::endl;
-    std::cout << "P2.size()=" << player2->getPokeball()->getPokemones().size() << std::endl;
+    // std::cout << "start of PokemonParty constructor" << std::endl;
+    // std::cout << "P1.size()=" << player1->getPokeball()->getPokemones().size() << std::endl;
+    // std::cout << "P2.size()=" << player2->getPokeball()->getPokemones().size() << std::endl;
 
     for (int i = 0; i < pokemonesP1.size(); i++)
     {
@@ -24,7 +24,7 @@ PokemonParty::PokemonParty(int indexP1, int indexP2, std::vector<int> pokemonesP
         // player2->getPokeball()->getPokemoneByIndex(pokemonesP1[i])->displayInfo();
         player2->addPokemon(player2->getPokeball()->getPokemoneByIndex(pokemonesP2[i]));
     }
-    std::cout << "end of PokemonParty constructor" << std::endl;
+    // std::cout << "end of PokemonParty constructor" << std::endl;
 }
 
 PokemonParty::PokemonParty(int indexP1, int indexP2, std::vector<std::string> pokemonesP1, std::vector<std::string> pokemonesP2)
@@ -47,8 +47,8 @@ void PokemonParty::fullbattle()
     std::vector<Pokemone *> pokemonesPlayer1 = player1->getMyPokemonsForBattle();
     std::vector<Pokemone *> pokemonesPlayer2 = player2->getMyPokemonsForBattle();
 
-    std::cout << "Player1 has " << pokemonesPlayer1.size() << " pokemones" << std::endl;
-    std::cout << "Player2 has " << pokemonesPlayer2.size() << " pokemones" << std::endl;
+    // std::cout << "Player1 has " << pokemonesPlayer1.size() << " pokemones" << std::endl;
+    // std::cout << "Player2 has " << pokemonesPlayer2.size() << " pokemones" << std::endl;
     for (auto p : pokemonesPlayer1)
     {
         if (p != nullptr)
@@ -79,10 +79,14 @@ void PokemonParty::fullbattle()
             }
             pokemon1->attackEnemy(pokemon2);
             pokemon2->attackEnemy(pokemon1);
-            pokemon1->displayInfo();
-            pokemon2->displayInfo();
+            
         }
-
+        std::cout << "*****Part"<<i+1 <<" *****" << std::endl;
+        std::cout<<"Player 1 has :"<<std::endl;
+        pokemon1->displayInfo();
+        std::cout<<"Player 2 has :"<<std::endl;
+        pokemon2->displayInfo();
+       
         if (pokemon1->getHitPoint() <= 0)
         {
             pointP2++;
@@ -93,11 +97,9 @@ void PokemonParty::fullbattle()
             pointP1++;
             std::cout << "Player2's " << pokemon2->getName() << " is defeated" << std::endl;
         }
+
     }
-    std::cout << "----------------------" << std::endl;
-    std::cout << "pointP1=" << pointP1 << std::endl;
-    std::cout << "pointP2=" << pointP2 << std::endl;
-    std::cout << "----------------------" << std::endl;
+    std::cout << "point Player 1=" << pointP1<< "| point Player 2=" << pointP2  << std::endl;
     std::cout << "size1="<< player1->getPokeball()->getPokemones().size() << ", size2=" <<player1->getPokeball()->getPokemones().size() << std::endl;
 
     afterCombat(pokemonesPlayer1, pokemonesPlayer2);

@@ -5,7 +5,7 @@
 int SetOfPokemon::findByName(std::string name)
 {
     int i = 0;
-    for (auto pok : pokemones)
+    for (auto pok : pokemons)
     {
         if (pok->getName() == name)
         {
@@ -18,7 +18,7 @@ int SetOfPokemon::findByName(std::string name)
 int SetOfPokemon::findById(int id)
 {
     int i = 0;
-    for (auto pok : pokemones)
+    for (auto pok : pokemons)
     {
         if (pok->getId() == id)
         {
@@ -30,16 +30,16 @@ int SetOfPokemon::findById(int id)
 }
 
 // getter for pokemones
-std::vector<Pokemone *> SetOfPokemon::getPokemones()
+std::vector<Pokemon *> SetOfPokemon::getPokemons()
 {
-    return pokemones;
+    return pokemons;
 }
 
 // affiche method to display the pokemones
 void SetOfPokemon::affiche()
 {
     int i = 0;
-    for (auto pok : pokemones)
+    for (auto pok : pokemons)
     {
         std::cout << "index=" << i << "| Pokemone ID:" << pok->getId() << " | Pokemone name:" << pok->getName() << std::endl;
         i++;
@@ -47,14 +47,14 @@ void SetOfPokemon::affiche()
 }
 
 // addNewPokemone method to add a new pokemone to the vector
-void SetOfPokemon::addNewPokemone(Pokemone *p)
+void SetOfPokemon::addNewPokemon(Pokemon *p)
 {
-    Pokemone *pok=new Pokemone(*p);
-    pokemones.push_back(p);
+    Pokemon *pok=new Pokemon(*p);
+    pokemons.push_back(p);
 }
 
 
 // removePokemone method to remove a pokemone from the vector
-void SetOfPokemon::removePokemone(int index){
-    pokemones.erase(pokemones.begin() + index);
+void SetOfPokemon::removePokemon(int index){
+    pokemons.erase(pokemons.begin() + index);
 }

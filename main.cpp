@@ -4,12 +4,12 @@
 #include "Pokedex.h"
 #include "Pokeball.h"
 #include "SetOfPokemon.h"
-#include "Pokemone.h"
+#include "Pokemon.h"
 #include "Game.h"
 #include "Player.h"
 #include "PokemonParty.h"
 // <------- state pattern ------>
-#include "./state_pattern/h_files/Attente.h"
+#include "./state_pattern/h_files/Wait.h"
 #include "./state_pattern/h_files/Init.h"
 #include "./state_pattern/h_files/SafeExploration.h"
 #include "./state_pattern/h_files/Exploration.h"
@@ -20,8 +20,8 @@ int secondMain()
     std::string name = "Volcanion";
     int id = 1;
     Pokedex *p = Pokedex::getPokdexInstance();
-    Pokemone *searcbByName = p->getPokemoneByNameNewV(name);
-    Pokemone *searcbByID = p->getPokemoneByIdNewV(id);
+    Pokemon *searcbByName = p->getPokemonByNameNewV(name);
+    Pokemon *searcbByID = p->getPokemonByIdNewV(id);
     if (searcbByName != nullptr)
     {
         std::cout << "Search by name= " << name << ":" << std::endl;
@@ -29,7 +29,7 @@ int secondMain()
     }
     else
     {
-        std::cout << "Pokemone called " << name << " found" << std::endl;
+        std::cout << "Pokemon called " << name << " found" << std::endl;
     }
     if (searcbByID != nullptr)
     {
@@ -38,11 +38,11 @@ int secondMain()
     }
     else
     {
-        std::cout << "Pokemone with id " << id << " found" << std::endl;
+        std::cout << "Pokemon with id " << id << " found" << std::endl;
     }
     Pokeball *pokeball = new Pokeball();
-    pokeball->addNewPokemone(searcbByName);
-    pokeball->addNewPokemone(searcbByID);
+    pokeball->addNewPokemon(searcbByName);
+    pokeball->addNewPokemon(searcbByID);
     // pokeball->affiche();
     return 0;
 }
@@ -80,6 +80,3 @@ int main()
     gamePlay.request();
     return 0;
 }
-/*
-g++ ./main.cpp ./Pokedex.cpp ./Pokeball.cpp ./SetOfPokemon.cpp ./Pokemone.cpp ./Game.cpp ./Player.cpp ./PokemonParty.cpp ./state_pattern/cpp_files/Attente.cpp ./state_pattern/cpp_files/Init.cpp ./state_pattern/cpp_files/SafeExploration.cpp ./state_pattern/cpp_files/Exploration.cpp ./state_pattern/cpp_files/Combat.cpp  -o newmain && ./newmain
-*/

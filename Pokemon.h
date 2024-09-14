@@ -1,6 +1,6 @@
 #include<iostream>
 #pragma once
-class Pokemone
+class Pokemon
 {
 private:
     int id;
@@ -13,9 +13,9 @@ private:
     static int instance; 
     /* data */
 public:
-    Pokemone();
-    Pokemone(const int id, const std::string name, const std::string game, const double hitPoint, const double attack, const double defence, const int generation);
-    Pokemone(Pokemone &p);
+    Pokemon();
+    Pokemon(const int id, const std::string name, const std::string game, const double hitPoint, const double attack, const double defence, const int generation);
+    Pokemon(Pokemon &p);
     const void displayInfo();
     const int getId();
     const std::string getGame();
@@ -30,7 +30,7 @@ public:
     void setGeneration(const int generation);
     std::string getName();
     void setName(const std::string newName);
-    void attackEnemy(Pokemone* p);
+    void attackEnemy(Pokemon* p);
     static int getNbInstance();
-    ~Pokemone();
+    ~Pokemon();
 };

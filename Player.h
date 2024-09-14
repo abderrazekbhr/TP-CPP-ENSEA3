@@ -2,19 +2,22 @@
 #include <iostream>
 #include <string>
 #include "Pokeball.h"
-#include "Pokemone.h"
+#include "Pokemon.h"
 class Player
 {
 private:
     Pokeball *myballs;
     std::string name;
-    std::vector<Pokemone*> myPokemonsForBattle;
+    int points;
+    std::vector<Pokemon*> myPokemonsForBattle;
 public:
     Player(std::string name);
     std::string getName();
     Pokeball *getPokeball();
-    void addPokemon(Pokemone *pokemone);
-    std::vector<Pokemone*> getMyPokemonsForBattle();
+    void addPokemon(Pokemon *pokemon);
+    std::vector<Pokemon*> getMyPokemonsForBattle();
+    int getPoints();
+    void addPoint();
     ~Player();
 
 

@@ -1,33 +1,33 @@
 #include <iostream>
 #include "Pokeball.h"
 
-Pokemone* Pokeball::getPokemoneByName(std::string name){
+Pokemon* Pokeball::getPokemonByName(std::string name){
     int index=findByName(name);
     if(index!=-1){
-        Pokemone * p=getPokemones()[index];
-        removePokemone(index);      
+        Pokemon * p=getPokemons()[index];
+        removePokemon(index);      
         return p;
     }
     
     return nullptr;
 }
 
-Pokemone* Pokeball::getPokemoneById(int id){
+Pokemon* Pokeball::getPokemonById(int id){
     int index=findById(id);
     if(index!=-1){
-        Pokemone *p= getPokemones()[index];
-        removePokemone(index);
+        Pokemon *p= getPokemons()[index];
+        removePokemon(index);
         return p;      
     }
     return nullptr;
     
 }
 
-Pokemone* Pokeball::getPokemoneByIndex(int id){
-    if(id>=0 && id<getPokemones().size()){
-        Pokemone *p= getPokemones()[id];
+Pokemon* Pokeball::getPokemonByIndex(int id){
+    if(id>=0 && id<getPokemons().size()){
+        Pokemon *p= getPokemons()[id];
         p->displayInfo();
-        removePokemone(id);
+        removePokemon(id);
         return p;      
     }
     return nullptr;
