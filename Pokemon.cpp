@@ -1,9 +1,9 @@
 #include <iostream>
 #include "Pokemon.h"
 
-int Pokemone::instance=0;
+int Pokemon::instance=0;
 //default constructor
-Pokemone::Pokemone(){
+Pokemon::Pokemon(){
     this->id=-1;
     this->name="none";
     this->game="new Game";
@@ -15,7 +15,7 @@ Pokemone::Pokemone(){
 }
 
 // constructor with params
-Pokemone::Pokemone(const int id, const std::string name, const std::string game, const double hitPoint, const double attack, const double defence, const int generation)
+Pokemon::Pokemon(const int id, const std::string name, const std::string game, const double hitPoint, const double attack, const double defence, const int generation)
 {
 
     this->id = id;
@@ -29,7 +29,7 @@ Pokemone::Pokemone(const int id, const std::string name, const std::string game,
 }
 
 // copy constructor 
-Pokemone::Pokemone(Pokemone &p)
+Pokemon::Pokemon(Pokemon &p)
 {
     this->id = p.getId();
     this->game = p.getGame();
@@ -43,28 +43,28 @@ Pokemone::Pokemone(Pokemone &p)
 
 
 // id Getter 
-const int Pokemone::getId()
+const int Pokemon::getId()
 {
     return this->id;
 }
 
 // Game getter and Setter
-const std::string Pokemone::getGame()
+const std::string Pokemon::getGame()
 {
     return this->game;
 }
-void Pokemone::setGame(std::string nameOfTheGame)
+void Pokemon::setGame(std::string nameOfTheGame)
 {
     this->game = nameOfTheGame;
 }
 
 // hitPoint Getter and Setter
-const double Pokemone::getHitPoint()
+const double Pokemon::getHitPoint()
 {
     return this->hitPoint;
 }
 
-void Pokemone::setHitPoint(const double hitPoint)
+void Pokemon::setHitPoint(const double hitPoint)
 {
     if (hitPoint > 0)
     {
@@ -77,11 +77,11 @@ void Pokemone::setHitPoint(const double hitPoint)
 };
 
 // atack Getter and Setter
-const double Pokemone::getAttack()
+const double Pokemon::getAttack()
 {
     return this->attack;
 }
-void Pokemone::setAttack(const double attack)
+void Pokemon::setAttack(const double attack)
 {
     if (attack > 0)
     {
@@ -94,11 +94,11 @@ void Pokemone::setAttack(const double attack)
 }
 
 // defence Getter and Setter
-const double Pokemone::getDefence()
+const double Pokemon::getDefence()
 {
     return this->defence;
 }
-void Pokemone::setDefence(const double defence)
+void Pokemon::setDefence(const double defence)
 {
     if (defence > 0)
     {
@@ -111,11 +111,11 @@ void Pokemone::setDefence(const double defence)
 }
 
 // generation Getter and Setter
-const int Pokemone::getGeneration()
+const int Pokemon::getGeneration()
 {
     return this->generation;
 }
-void Pokemone::setGeneration(const int generation)
+void Pokemon::setGeneration(const int generation)
 {
     if (generation > 0)
     {
@@ -129,12 +129,12 @@ void Pokemone::setGeneration(const int generation)
 
 
 // display all params
-const void Pokemone::displayInfo(){
+const void Pokemon::displayInfo(){
     std::cout<<"id:"<<this->id<<", name:"<<this->name<<", game:"<<this->game<<", hitPoint:"<<this->hitPoint<<", attack:"<<this->attack<<", defence:"<<this->defence<<", generation:" <<this->generation<<std::endl;
 }
 
-// attack pokemone
-void Pokemone::attackEnemy(Pokemone* p){
+// attack pokemon
+void Pokemon::attackEnemy(Pokemon* p){
     double diff= this->getAttack()-p->getDefence();
     // std::cout<<"--------------"<<diff<<"--------------"<<std::endl;
     if(diff>0){
@@ -143,22 +143,22 @@ void Pokemone::attackEnemy(Pokemone* p){
     
 }
 
-int Pokemone::getNbInstance(){
-    return Pokemone::instance;
+int Pokemon::getNbInstance(){
+    return Pokemon::instance;
 }
 
 //getter and stter of Name
-std::string Pokemone::getName(){
+std::string Pokemon::getName(){
     return this->name;
 }
 
-void Pokemone::setName(std::string newName){
+void Pokemon::setName(std::string newName){
     this->name=newName;
 }
 
 // destructor 
-Pokemone::~Pokemone(){
-    Pokemone::instance --;
+Pokemon::~Pokemon(){
+    Pokemon::instance --;
     // std::cout<<"end Pokemone id:"<<this->getId()<<"| and nb_instance:"<<Pokemone::getNbInstance()<<std::endl;
 
 }
