@@ -31,14 +31,6 @@ Voici un diagramme représentant le déroulement du jeu :
 </p>
 Ce diagramme montre les différentes étapes de l'exploration, de la sélection des Pokémon, du lancement des combats et de l'affichage des résultats.
 
-## Architecture du Projet
-
-Le projet suit une architecture orientée objet en C++. Voici un diagramme de classes représentant l'architecture du projet :
-
-![Diagramme de Classes](path/to/class_diagram.png)
-
-Ce diagramme décrit les différentes classes, leurs attributs, méthodes et relations, et comment elles interagissent pour créer le jeu.
-
 ## Commandes d'Exécution
 
 Pour exécuter le projet, suivez ces étapes :
@@ -47,7 +39,7 @@ Pour exécuter le projet, suivez ces étapes :
    - Assurez-vous d'avoir un compilateur C++ installé (comme `g++`).
    - Utilisez la commande suivante pour compiler le projet :
      ```bash
-     g++ ./main.cpp ./Pokedex.cpp ./Pokeball.cpp ./SetOfPokemon.cpp ./Pokemone.cpp ./Game.cpp ./Player.cpp ./PokemonParty.cpp ./state_pattern/cpp_files/Attente.cpp ./state_pattern/cpp_files/Init.cpp ./state_pattern/cpp_files/SafeExploration.cpp ./state_pattern/cpp_files/Exploration.cpp ./state_pattern/cpp_files/Combat.cpp  -o pokeGame
+     g++ ./main.cpp ./Pokedex.cpp ./Pokeball.cpp ./SetOfPokemon.cpp ./Pokemon.cpp ./Game.cpp ./Player.cpp ./PokemonParty.cpp ./state_pattern/cpp_files/Wait.cpp ./state_pattern/cpp_files/Init.cpp ./state_pattern/cpp_files/SafeExploration.cpp ./state_pattern/cpp_files/Exploration.cpp ./state_pattern/cpp_files/Combat.cpp ./state_pattern/cpp_files/Result.cpp -o pokeGame 
      ```
 
 2. **Exécuter le projet** :
