@@ -24,10 +24,9 @@ Pokemon* Pokeball::getPokemonById(int id){
 }
 
 Pokemon* Pokeball::getPokemonByIndex(int id){
+    // std::cout<<"/////////"<<getPokemons().size()<<"/////////"<<std::endl;
     if(id>=0 && id<getPokemons().size()){
         Pokemon *p= getPokemons()[id];
-        p->displayInfo();
-        removePokemon(id);
         return p;      
     }
     return nullptr;

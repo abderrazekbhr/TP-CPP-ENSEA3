@@ -7,7 +7,7 @@ class Combat : public State
 private:
     PokemonParty *party;
 public:
-    void handle();
+    void handel();
     Combat(PokemonParty *party);
     PokemonParty *getParty();    
     ~Combat();

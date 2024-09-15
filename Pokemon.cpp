@@ -1,17 +1,18 @@
 #include <iostream>
 #include "Pokemon.h"
 
-int Pokemon::instance=0;
-//default constructor
-Pokemon::Pokemon(){
-    this->id=-1;
-    this->name="none";
-    this->game="new Game";
-    this->hitPoint=1.0;
-    this->attack=1.0;
-    this->defence=1.0;
-    this->generation=0;
-    instance+=1;
+int Pokemon::instance = 0;
+// default constructor
+Pokemon::Pokemon()
+{
+    this->id = -1;
+    this->name = "none";
+    this->game = "new Game";
+    this->hitPoint = 1.0;
+    this->attack = 1.0;
+    this->defence = 1.0;
+    this->generation = 0;
+    instance += 1;
 }
 
 // constructor with params
@@ -19,16 +20,16 @@ Pokemon::Pokemon(const int id, const std::string name, const std::string game, c
 {
 
     this->id = id;
-    this->name=name;
+    this->name = name;
     this->game = game;
     this->hitPoint = hitPoint;
     this->attack = attack;
     this->defence = defence;
     this->generation = generation;
-    instance+=1;
+    instance += 1;
 }
 
-// copy constructor 
+// copy constructor
 Pokemon::Pokemon(Pokemon &p)
 {
     this->id = p.getId();
@@ -37,12 +38,10 @@ Pokemon::Pokemon(Pokemon &p)
     this->attack = p.getAttack();
     this->defence = p.getDefence();
     this->generation = p.getGeneration();
-    instance+=1;
-
+    instance += 1;
 }
 
-
-// id Getter 
+// id Getter
 const int Pokemon::getId()
 {
     return this->id;
@@ -127,38 +126,44 @@ void Pokemon::setGeneration(const int generation)
     }
 }
 
-
 // display all params
-const void Pokemon::displayInfo(){
-    std::cout<<"id:"<<this->id<<", name:"<<this->name<<", game:"<<this->game<<", hitPoint:"<<this->hitPoint<<", attack:"<<this->attack<<", defence:"<<this->defence<<", generation:" <<this->generation<<std::endl;
+const void Pokemon::displayInfo()
+{
+    std::cout << "id:" << this->id << ", name:" << this->name << ", game:" << this->game << "\033[1m\033[38;2;255;165;100m"
+              << ", hitPoint: " << this->hitPoint
+              << "\033[0m" << ", attack:" << this->attack << ", defence:" << this->defence << ", generation:" << this->generation << std::endl;
 }
 
 // attack pokemon
-void Pokemon::attackEnemy(Pokemon* p){
-    double diff= this->getAttack()-p->getDefence();
+void Pokemon::attackEnemy(Pokemon *p)
+{
+    double diff = this->getAttack() - p->getDefence();
     // std::cout<<"--------------"<<diff<<"--------------"<<std::endl;
-    if(diff>0){
-        p->setHitPoint(p->getHitPoint()-diff);
+    if (diff > 0)
+    {
+        p->setHitPoint(p->getHitPoint() - diff);
     }
-    
 }
 
-int Pokemon::getNbInstance(){
+int Pokemon::getNbInstance()
+{
     return Pokemon::instance;
 }
 
-//getter and stter of Name
-std::string Pokemon::getName(){
+// getter and stter of Name
+std::string Pokemon::getName()
+{
     return this->name;
 }
 
-void Pokemon::setName(std::string newName){
-    this->name=newName;
+void Pokemon::setName(std::string newName)
+{
+    this->name = newName;
 }
 
-// destructor 
-Pokemon::~Pokemon(){
-    Pokemon::instance --;
+// destructor
+Pokemon::~Pokemon()
+{
+    Pokemon::instance--;
     // std::cout<<"end Pokemone id:"<<this->getId()<<"| and nb_instance:"<<Pokemone::getNbInstance()<<std::endl;
-
 }

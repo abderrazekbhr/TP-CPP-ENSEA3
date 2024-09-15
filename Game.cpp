@@ -22,11 +22,15 @@ void Game::setState(State *state)
 }
 void Game::request()
 {
-    gameSate->handle();
+    gameSate->handel();
 }
 
 Game::~Game()
 {
+    for(auto p:players){
+        delete p;
+    }
+    delete pokedex;
     delete gameSate;
-    std::cout << "End of Game (Game deleted)" << std::endl;
+    std::cout << "End of Game" << std::endl;
 }

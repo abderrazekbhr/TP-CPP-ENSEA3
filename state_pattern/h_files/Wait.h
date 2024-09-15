@@ -2,6 +2,6 @@
 
 class Wait:public State{
     public :
-        void handle();
+        void handel();
         ~Wait();
 };

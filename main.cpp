@@ -14,7 +14,7 @@
 #include "./state_pattern/h_files/SafeExploration.h"
 #include "./state_pattern/h_files/Exploration.h"
 #include "./state_pattern/h_files/Combat.h"
-
+#include "./state_pattern/h_files/Result.h"
 int secondMain()
 {
     std::string name = "Volcanion";
@@ -54,29 +54,45 @@ int main()
     // define the players id
     int playerId1 = 0;
     int playerId2 = 1;
+    State *state;
+
 
     // Attente state is created when the game is created
     // handel function is called by calling the request function
     // the setState function is called to change the state
-    Game gamePlay = Game();
-    gamePlay.request();
-    //init state is created
-    gamePlay.setState(new Init());
-    gamePlay.request();
-    do
+    Game *gamePlay =new Game();
+    gamePlay->request();
+    // init state is created
+    state = new Init();
+    gamePlay->setState(state);
+    gamePlay->request();
+    for (size_t i = 0; i < 3; i++)
     {
-        // SafeExploration state is created
-        gamePlay.setState(new SafeExploration());
-        gamePlay.request();
-        // Exploration state is created
-        gamePlay.setState(new Exploration());
-        gamePlay.request();
-        // check if the player wants to combat
-        std::cin >> doYouWantToCombat;
-    } while (doYouWantToCombat == "No");
-    
-    // Combat state is created
-    gamePlay.setState(new Combat(new PokemonParty(playerId1, playerId2, {0, 1, 2, 3, 4, 5}, {0, 1, 2, 3, 4, 5})));
-    gamePlay.request();
+
+        do
+        {
+            // SafeExploration state is created
+            state = new SafeExploration();
+            gamePlay->setState(state);
+            gamePlay->request();
+
+            // Exploration state is created
+            state = new Exploration();
+            gamePlay->setState(state);
+            gamePlay->request();
+            // check if the player wants to combat
+            std::cin >> doYouWantToCombat;
+        } while (doYouWantToCombat == "No");
+        PokemonParty *party = new PokemonParty(playerId1, playerId2, {0, 1, 2, 3, 4, 5}, {0, 1, 2, 3, 4, 5});
+        // Combat state is created
+        state=new Combat(party);
+        gamePlay->setState(state);
+        gamePlay->request();
+    }
+
+    // Result state is created
+    gamePlay->setState(new Result());
+    gamePlay->request();
+    delete gamePlay;
     return 0;
 }

@@ -3,7 +3,7 @@
 class Init:public State
 {
 public:
-    void handle();
+    void handel();
     ~Init();
 };
 

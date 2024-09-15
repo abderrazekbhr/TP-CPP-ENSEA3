@@ -3,6 +3,6 @@
 class SafeExploration : public State
 {
 public:
-    void handle();
+    void handel();
     ~SafeExploration();
 };

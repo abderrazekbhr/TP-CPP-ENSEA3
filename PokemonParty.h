@@ -12,6 +12,6 @@ public:
     PokemonParty(int indexP1, int indexP2, std::vector<int> pokemonesP1, std::vector<int> pokemonesP2);
     PokemonParty(int indexP1, int indexP2, std::vector<std::string> pokemonesP1, std::vector<std::string> pokemonesP2);
     void fullbattle();
-    void afterCombat(std::vector<Pokemone *> &pokemonesAfterPartyP1, std::vector<Pokemone *> &pokemonesAfterPartyP2);
+    void afterCombat(std::vector<Pokemon *> &pokemonesAfterPartyP1, std::vector<Pokemon *> &pokemonesAfterPartyP2);
     ~PokemonParty();
 };
