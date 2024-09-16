@@ -12,14 +12,14 @@ void Result::handel()
 
     if (pP1 > pP2)
     {
-        std::cout << "\033[1m\033[38;2;0;0;0m********** Player 1 wins **********\033[0m" << std::endl;
+        std::cout << "\033[1m\033[38;2;0;255;0m********** Player 1 wins **********\033[0m" << std::endl;
     }
     else if (pP1 == pP2)
     {
-        std::cout << "\033[1m\033[38;2;0;0;0m********** Draw **********\033[0m" << std::endl;
+        std::cout << "\033[1m\033[38;2;0;255;0m********** Draw **********\033[0m" << std::endl;
     }
     else
     {
-        std::cout << "\033[1m\033[38;2;0;0;0m********** Player 2 wins **********\033[0m" << std::endl;
+        std::cout << "\033[1m\033[38;2;0;255;0m********** Player 2 wins **********\033[0m" << std::endl;
     }
 }

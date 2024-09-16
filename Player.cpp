@@ -19,7 +19,8 @@ Pokeball *Player::getPokeball()
 
 void Player::addPokemon(Pokemon *pokemon)
 {
-    myPokemonsForBattle.push_back(pokemon);
+    myPokemonsForBattle.insert(myPokemonsForBattle.begin() + 0,
+                               pokemon);
 }
 
 std::vector<Pokemon *> Player::getMyPokemonsForBattle()
@@ -38,6 +39,6 @@ void Player::addPoint()
 
 Player::~Player()
 {
-    std::cout << "Player destructor called" << std::endl;
+    // std::cout << "Player destructor called" << std::endl;
     delete myballs;
 }

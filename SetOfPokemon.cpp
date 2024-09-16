@@ -49,12 +49,20 @@ void SetOfPokemon::affiche()
 // addNewPokemone method to add a new pokemone to the vector
 void SetOfPokemon::addNewPokemon(Pokemon *p)
 {
-    Pokemon *pok=new Pokemon(*p);
+    Pokemon *pok = new Pokemon(*p);
     pokemons.push_back(p);
 }
 
+// removePokemone method to remove a pokemone from the vector
+void SetOfPokemon::removePokemon(Pokemon *p)
+{
+    int index = findByName(p->getName());
+    if (index != -1)
+        pokemons.erase(pokemons.begin() + index);
+}
 
 // removePokemone method to remove a pokemone from the vector
-void SetOfPokemon::removePokemon(int index){
+void SetOfPokemon::removePokemon(int index)
+{
     pokemons.erase(pokemons.begin() + index);
 }

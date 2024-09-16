@@ -9,41 +9,68 @@ PokemonParty::PokemonParty(int indexP1, int indexP2, std::vector<int> pokemonsP1
     player1 = Game::getPlayers()[indexP1];
     player2 = Game::getPlayers()[indexP2];
 
-    for (int i = 0; i < pokemonsP1.size(); i++)
+    // Clear the battle team for both players
+    player1->getMyPokemonsForBattle().clear();
+    player2->getMyPokemonsForBattle().clear();
+
+    // Add Pokémon to player1's battle team
+    for (int index : pokemonsP1)
     {
-        Pokemon* pokemon = player1->getPokeball()->getPokemonByIndex(pokemonsP1[i]);
-        if (pokemon) {
+        Pokemon *pokemon = player1->getPokeball()->getPokemonByIndex(index);
+
+        if (pokemon) // Check if the Pokemon exists
+        {
             player1->addPokemon(pokemon);
-            player1->getPokeball()->removePokemon(pokemonsP1[i]);
         }
     }
-    for (int i = 0; i < pokemonsP2.size(); i++)
+
+    // Collect and remove Pokémon from player1's Pokéball after adding to battle team
+    std::vector<Pokemon *> pokemonsToRemove1 = player1->getMyPokemonsForBattle();
+    for (Pokemon *pokemon : pokemonsToRemove1)
     {
-        Pokemon* pokemon = player2->getPokeball()->getPokemonByIndex(pokemonsP2[i]);
-        if (pokemon) {
+        player1->getPokeball()->removePokemon(pokemon);
+    }
+
+    // Add Pokémon to player2's battle team
+    for (int index : pokemonsP2)
+    {
+        Pokemon *pokemon = player2->getPokeball()->getPokemonByIndex(index);
+
+        if (pokemon) // Check if the Pokemon exists
+        {
             player2->addPokemon(pokemon);
-            player2->getPokeball()->removePokemon(pokemonsP2[i]);
         }
+    }
+
+    // Collect and remove Pokémon from player2's Pokéball after adding to battle team
+    std::vector<Pokemon *> pokemonsToRemove2 = player2->getMyPokemonsForBattle();
+    for (Pokemon *pokemon : pokemonsToRemove2)
+    {
+        player2->getPokeball()->removePokemon(pokemon);
     }
 }
+
+
 
 PokemonParty::PokemonParty(int indexP1, int indexP2, std::vector<std::string> pokemonsP1, std::vector<std::string> pokemonsP2)
 {
     player1 = Game::getPlayers()[indexP1];
     player2 = Game::getPlayers()[indexP2];
 
-    for (const auto& name : pokemonsP1)
+    for (const auto &name : pokemonsP1)
     {
-        Pokemon* pokemon = player1->getPokeball()->getPokemonByName(name);
-        if (pokemon) {
+        Pokemon *pokemon = player1->getPokeball()->getPokemonByName(name);
+        if (pokemon)
+        {
             player1->addPokemon(pokemon);
         }
     }
 
-    for (const auto& name : pokemonsP2)
+    for (const auto &name : pokemonsP2)
     {
-        Pokemon* pokemon = player2->getPokeball()->getPokemonByName(name);
-        if (pokemon) {
+        Pokemon *pokemon = player2->getPokeball()->getPokemonByName(name);
+        if (pokemon)
+        {
             player2->addPokemon(pokemon);
         }
     }
@@ -52,16 +79,15 @@ PokemonParty::PokemonParty(int indexP1, int indexP2, std::vector<std::string> po
 void PokemonParty::fullbattle()
 {
     int pointP1 = 0, pointP2 = 0;
-    std::vector<Pokemon*> pokemonsPlayer1 = player1->getMyPokemonsForBattle();
-    std::vector<Pokemon*> pokemonsPlayer2 = player2->getMyPokemonsForBattle();
+    std::vector<Pokemon *> pokemonsPlayer1 = player1->getMyPokemonsForBattle();
+    std::vector<Pokemon *> pokemonsPlayer2 = player2->getMyPokemonsForBattle();
 
-    int battleCount = std::min(pokemonsPlayer1.size(), pokemonsPlayer2.size());
-    battleCount = std::min(battleCount, 6); // Ensure we have a maximum of 6 battles
+    int battleCount = 6;
 
     for (int i = 0; i < battleCount; i++)
     {
-        Pokemon* pokemon1 = pokemonsPlayer1[i];
-        Pokemon* pokemon2 = pokemonsPlayer2[i];
+        Pokemon *pokemon1 = pokemonsPlayer1[i];
+        Pokemon *pokemon2 = pokemonsPlayer2[i];
 
         if (!pokemon1 || !pokemon2)
         {
@@ -95,7 +121,7 @@ void PokemonParty::fullbattle()
         {
             pointP2++;
         }
-        else
+        else if (pokemon2->getHitPoint() == 0)
         {
             pointP1++;
         }
@@ -107,6 +133,7 @@ void PokemonParty::fullbattle()
 
     if (pointP1 > pointP2)
     {
+
         player1->addPoint();
         std::cout << "\033[1m\033[38;2;255;165;100m" << "-------------------------- Player1 wins --------------------------" << "\033[0m" << std::endl;
     }
@@ -120,10 +147,9 @@ void PokemonParty::fullbattle()
         std::cout << "\033[1m\033[38;2;255;165;100m" << "-------------------------- Player2 wins --------------------------" << "\033[0m" << std::endl;
     }
 
-    std::cout << "\033[1m\033[38;2;200;165;100m------------------ size of pokeball of first player=" << player1->getPokeball()->getPokemons().size() << ", size of pokeball of second player=" << player2->getPokeball()->getPokemons().size() << " ------------------\033[0m" << std::endl;
 }
 
-void PokemonParty::afterCombat(std::vector<Pokemon*>& pokemonsAfterPartyP1, std::vector<Pokemon*>& pokemonsAfterPartyP2)
+void PokemonParty::afterCombat(std::vector<Pokemon *> &pokemonsAfterPartyP1, std::vector<Pokemon *> &pokemonsAfterPartyP2)
 {
     for (auto pokemon : pokemonsAfterPartyP1)
     {

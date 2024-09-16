@@ -56,11 +56,10 @@ int main()
     int playerId2 = 1;
     State *state;
 
-
     // Attente state is created when the game is created
     // handel function is called by calling the request function
     // the setState function is called to change the state
-    Game *gamePlay =new Game();
+    Game *gamePlay = new Game();
     gamePlay->request();
     // init state is created
     state = new Init();
@@ -85,7 +84,7 @@ int main()
         } while (doYouWantToCombat == "No");
         PokemonParty *party = new PokemonParty(playerId1, playerId2, {0, 1, 2, 3, 4, 5}, {0, 1, 2, 3, 4, 5});
         // Combat state is created
-        state=new Combat(party);
+        state = new Combat(party);
         gamePlay->setState(state);
         gamePlay->request();
     }

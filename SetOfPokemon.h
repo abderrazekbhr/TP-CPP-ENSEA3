@@ -16,6 +16,7 @@ class SetOfPokemon{
         virtual Pokemon* getPokemonById(int id)=0;
         std::vector<Pokemon*> getPokemons();
         void addNewPokemon(Pokemon* p);
-        void removePokemon(int index);
+        void removePokemon(Pokemon* p);
+        void removePokemon(int  index);
         void affiche();
 };

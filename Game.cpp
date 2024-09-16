@@ -1,7 +1,7 @@
 #include "Game.h"
 #include "state_pattern/h_files/Wait.h"
 
-std::vector<Player*> Game::players;
+std::vector<Player *> Game::players;
 Game::Game()
 {
     setState(new Wait());
@@ -27,10 +27,11 @@ void Game::request()
 
 Game::~Game()
 {
-    for(auto p:players){
+    for (auto p : players)
+    {
         delete p;
     }
     delete pokedex;
     delete gameSate;
-    std::cout << "End of Game" << std::endl;
+    std::cout << "\033[1;3;31m------------- End of Game ------------- \033[0m" << std::endl;
 }
