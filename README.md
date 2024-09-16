@@ -51,4 +51,6 @@ Pour exécuter le projet, suivez ces étapes :
 ## Épreuve de l'Exécution
 
 Voici un exemple de sortie d'exécution du programme :
-
+<p align="center">
+  <img src="https://github.com/abderrazekbhr/TP-CPP-ENSEA3/blob/main/documentation/flowChart.png" alt="Diagramme de Déroulement du Jeu" />
+</p>
